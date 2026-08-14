@@ -133,4 +133,4 @@ LTC: LVnTy14pHFRoSbqWbmhGBNjV4k2dBnY2Zn
 
 ### Stars over time
 
-<img src="https://api.star-history.com/svg?repos=jd1378/otphelper&type=Date&theme=dark" alt="Chart of github stars over time"/>
+<img src="https://star-history.dera.page/svg?repos=jd1378/otphelper&type=Date&theme=dark" alt="Chart of github stars over time"/>
