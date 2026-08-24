@@ -19,6 +19,7 @@ object CodeExtractorDefaults {
           "One[-\\s]Time[-\\s]Password",
           "کد",
           "رمز",
+          "شناسه\\s+تا[یي][یي]د", // "confirmation id" in persian
           "\\bOTP\\W",
           "\\b2FA\\W",
           "Einmalkennwort",
