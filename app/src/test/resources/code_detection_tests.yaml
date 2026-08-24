@@ -533,6 +533,11 @@
   shouldIgnore: false
   expectedCode: "123456"
 
+- name: earsivCode
+  message: 'EARSIV FATURA(INTERAKTIF) ONAYI ICIN SMS SIFRENIZ: A7B29C B003'
+  shouldIgnore: false
+  expectedCode: "A7B29C"
+  
 # ── Korean ─────────────────────────────────────────────────────────────────────
 
 - name: koreanCode
