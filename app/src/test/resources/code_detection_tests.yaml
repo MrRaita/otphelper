@@ -104,6 +104,25 @@
   skipCodeCheck: true
   expectedCode: ~
 
+- name: takhfifBrokenPluralIgnore
+  message: 'تخفیفات ویژه پاییزی! کد شما: 123456'
+  shouldIgnore: true
+  skipCodeCheck: true
+  expectedCode: ~
+
+- name: takhfifHaPluralIgnore
+  message: 'تخفیفها تا ۵۰ درصد، کد: 123456'
+  shouldIgnore: true
+  skipCodeCheck: true
+  expectedCode: ~
+
+# zwnj already satisfies the word boundary, this locks that in
+- name: takhfifZwnjPluralIgnore
+  message: 'تخفیف‌های ویژه، کد: 123456'
+  shouldIgnore: true
+  skipCodeCheck: true
+  expectedCode: ~
+
 - name: officeIsNotOffIgnore
   message: Your office code is 123456
   shouldIgnore: false

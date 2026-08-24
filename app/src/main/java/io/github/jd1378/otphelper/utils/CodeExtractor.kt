@@ -83,6 +83,8 @@ object CodeExtractorDefaults {
   val ignoredPhrases =
       persistentListOf(
           "تخفیف",
+          "تخفیفات",
+          "تخفیفها",
           "takhfif",
           "off",
           "اشتباه وارد شده",
