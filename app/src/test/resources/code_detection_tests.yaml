@@ -98,6 +98,17 @@
   skipCodeCheck: true
   expectedCode: ~
 
+- name: takhfifIgnore
+  message: 'کد تخفیف شما: 123456'
+  shouldIgnore: true
+  skipCodeCheck: true
+  expectedCode: ~
+
+- name: officeIsNotOffIgnore
+  message: Your office code is 123456
+  shouldIgnore: false
+  expectedCode: "123456"
+
 - name: pasargadShouldIgnore1
   shouldIgnore: true
   skipCodeCheck: true
@@ -435,6 +446,11 @@
   shouldIgnore: false
   expectedCode: "123456"
 
+- name: russianPasswordWarningWithoutCode
+  message: Никому не сообщайте свой пароль.
+  shouldIgnore: false
+  expectedCode: ~
+
 # ── Hebrew ─────────────────────────────────────────────────────────────────────
 
 - name: hebrewCode1
@@ -459,6 +475,11 @@
 
 - name: shouldNotExtractHebrewNonCode
   message: בנקודת 123456
+  shouldIgnore: false
+  expectedCode: ~
+
+- name: hebrewCodeAsWordPrefixNotDetected
+  message: קודם כל תודה, מספר ההזמנה שלך 123456
   shouldIgnore: false
   expectedCode: ~
 

@@ -12,6 +12,11 @@ data class CodeExtractorResult(
   val codeGroup: Int,
 )
 
+// java's \b only treats ascii as word chars, so it never matches next to
+// cyrillic/hebrew/persian letters. these are its unicode-aware equivalent.
+private const val WORD_START = "(?<![\\p{L}\\p{N}_])"
+private const val WORD_END = "(?![\\p{L}\\p{N}_])"
+
 object CodeExtractorDefaults {
   val sensitivePhrases =
       persistentListOf(
@@ -34,8 +39,8 @@ object CodeExtractorDefaults {
           "驗證",
           "код",
           "סיסמ",
-          "\\bהקוד\\W",
-          "\\bקוד\\W",
+          "${WORD_START}הקוד$WORD_END",
+          "${WORD_START}קוד$WORD_END",
           "\\bKodu\\W", // "code" in turkish
           "\\bKodunuz\\W", // "your code" in turkish
           "\\b[sş]ifre:\\W", // "password" in turkish
@@ -52,7 +57,7 @@ object CodeExtractorDefaults {
           "\\bkod\\W", // PL
           "\\bautoryzacji\\W", // PL
           "Parol\\s+dlya\\s+podtverzhdeniya", // russian
-          "\\bпароль\\W", // russian
+          "${WORD_START}пароль$WORD_END", // russian
           "인증번호", // "authentication number" in korean
       )
 
@@ -137,7 +142,7 @@ class CodeExtractor // this comment is to separate parts
           .toRegex(setOf(RegexOption.IGNORE_CASE, RegexOption.MULTILINE))
 
   val ignoredPhrasesRegex =
-      """\b(${ignoredPhrases.joinToString("|")})\b"""
+      """$WORD_START(${ignoredPhrases.joinToString("|")})$WORD_END"""
           .toRegex(setOf(RegexOption.IGNORE_CASE, RegexOption.MULTILINE))
 
   val cleanupPhrasesRegex =
