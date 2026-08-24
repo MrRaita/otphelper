@@ -36,7 +36,9 @@ constructor(
     AppLogger.i(
         TAG,
         "doWork: setupFinished=${userSettings.isSetupFinished}, " +
-            "mode=${userSettings.modeOfOperation}",
+            "mode=${userSettings.modeOfOperation}, " +
+            "hasSmsPermission=${hasSmsPermission(applicationContext)}, " +
+            "notifListenerEnabled=${isNotificationListenerServiceEnabled(applicationContext)}",
     )
     if (!userSettings.isSetupFinished) {
       AppLogger.i(TAG, "setup not finished, nothing to rebind")
