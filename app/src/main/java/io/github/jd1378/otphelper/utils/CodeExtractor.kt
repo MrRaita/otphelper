@@ -44,6 +44,7 @@ object CodeExtractorDefaults {
           "\\bKodu\\W", // "code" in turkish
           "\\bKodunuz\\W", // "your code" in turkish
           "\\b[sş]ifre:\\W", // "password" in turkish
+          "\\b[sş]ifreniz\\W", // "your password" in turkish
           "\\bKodi\\W",
           "\\bKods\\W",
           "\\b(?:m|sms)?TAN\\W",
